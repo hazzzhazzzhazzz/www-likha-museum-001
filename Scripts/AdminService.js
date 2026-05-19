@@ -196,7 +196,8 @@ $(document).ready(function () {
         var birthDateValue = document.getElementById("dateBirthDate").value.trim();
         var passwordValue = document.getElementById("hiddenSetPassword").value.trim();
         var confirmPasswordValue = document.getElementById("hiddenConfirmPassword").value.trim();
-
+        
+        
         if (!deptIDValue || deptIDValue === "Select Department*") {
             Swal.fire({
                 title: "Validation Error",
@@ -418,6 +419,34 @@ $(document).ready(function () {
         return true;
     }
 
+    function validateLoginFields() {
+        var emailValue = document.getElementById("loginEmail").value;
+        var passwordValue = document.getElementById("loginPassword").value;
+
+        if (!emailValue || !passwordValue) {
+            Swal.fire({
+                title: "Validation Error",
+                text: "Please enter email and password.",
+                icon: "warning",
+                theme: 'bootstrap-5',
+                confirmButtonText: "OK",
+                confirmButtonColor: "#3085d6",
+                showClass: { popup: `
+                    animate__animated
+                    animate__headShake
+                ` },
+                hideClass: { popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                ` }
+            });
+            return false;
+        }
+
+        return true;
+    }
+
     function addFunc(){
         if (!validateFields()) {
             return;
@@ -611,6 +640,11 @@ $(document).ready(function () {
     }
 
     function loginFunc(){
+
+        if (!validateLoginFields()) {
+            return;
+        }        
+
         var emailValue = document.getElementById("loginEmail").value;
         var passwordValue = document.getElementById("loginPassword").value;
 
