@@ -72,7 +72,20 @@ $(document).ready(function () {
                 pointBackgroundColor: 'rgb(255, 99, 132)'
             }]
         },
+        // Move all configurations inside this ONE options block
         options: {
+            responsive: true,
+            maintainAspectRatio: false, // <-- Forces the chart to obey your CSS height
+            
+            layout: {
+                padding: {
+                    bottom: 25, // Increased a bit more to completely clear your month labels
+                    left: 10,
+                    right: 15,
+                    top: 5
+                }
+            },
+            
             scales: {
                 y: {
                     beginAtZero: true,

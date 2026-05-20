@@ -68,12 +68,14 @@
     <div class="dashboard-container">
         <header class="dashboard-header">
             <div><a href="Dashboard.php"><img src="../../Multimedia/Images/Likha-Museum-Logo.png" alt="Likha Museum Logo" class="logo"></a></div>
-            <h1>Data Dashboard</h1>
+            <h1 class="title">Data Dashboard</h1>
         <div class="live-timestamp"><p id="currentDate"></p><p id="currentTime"></p></div>
         </header>
 
         <section class="main-chart-card">
-            <h3>Employee Logins Month</h3><canvas id="EmployeeLineChart"></canvas>
+            <div class="line-graph-wrapper">
+                <h3>Employee Logins Month</h3><canvas id="EmployeeLineChart"></canvas>
+            </div>
         </section>
 
         <div class="bottom-grid">
