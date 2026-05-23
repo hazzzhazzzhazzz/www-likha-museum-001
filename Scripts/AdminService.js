@@ -768,8 +768,16 @@ $(document).ready(function () {
             }
         }
 
-        else if(redirectID === 5){
-            window.location.href = "../../View/AdminSide/ViewAllTablesPage.php";
-        } //Hindi pa siya existing pero listahan ng lahat tables ito from the db
+        else{
+            window.location.href = "../../View/AdminSide/NotFoundPage.html";
+        }
     
     }
+
+/*    function NotFoundRedirect() {
+        
+        if (!window.location.href.includes("NotFoundPage.html" || "NotFoundPage.php")) {
+            window.location.href = "../../View/AdminSide/NotFoundPage.html";
+        }
+
+    }*/

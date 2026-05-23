@@ -1,5 +1,4 @@
 <?php
-    
     session_start();
     require_once '../../BusinessLogic/AdminUserManagement.php';
     
@@ -12,9 +11,7 @@
     }, $users);
 
     //RegistrationPage.php
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,148 +37,141 @@
     <link rel="icon" type="image/png" href="../../Multimedia/Images/Likha-Museum-Icon.png">
 
     <title>Registration Page</title>
-    
+
 </head>
 
 <body class="Registration-Page">
 
-    <?php if(!empty($tableUsers)): ?>
-        <a class="btn btn-login" onclick="redirectFunc(1)"><i class="bi bi-person-badge"></i> Log in</a>
-    <?php endif; ?>
-
-    <div class="HeaderBorder">
-        <!--<img src="../../Multimedia/Images/Likha-Museum-Logo.png" alt="Likha Museum Logo" class="logo">-->
-        <h1 class="title">Registration Page</h1>
-    </div>
-
-    <div class="BodyBorder">
-
-        <div class="InputFields col s12 m12 l12">
-                
-            <div class="row">
-                <form>
-                    <fieldset>
-                        <legend class="AdminRegistrationLegend">User Information</legend>
-                    
-                    
-                    <div class="row">
-                        <div class="col s6 m6 l6">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" maxlength="99" title="Enter a first name" required>
-                                <label for="txtFirstName">First Name<span class="requiredAskterisk">*</span></label>
-                            </div>
-                        </div>
-
-                        <div class="col s6 m6 l6">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtMiddleName" placeholder="Middle Name" maxlength="99" title="Enter a middle name" required>
-                                <label for="txtMiddleName">Middle Name<span class="requiredAskterisk">*</span></label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" maxlength="99" title="Enter a last name" required>
-                                <label for="txtLastName">Last Name<span class="requiredAskterisk">*</span></label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <select class="form-select form-select-sm" id="selDepartment" aria-label=".form-select-sm example">
-                                <option selected disabled>Select Department*</option>
-                            <?php foreach($departments as $department): ?>
-                                <option value="<?= (int) $department['Department_ID'] ?>"><?= htmlspecialchars($department['DepartmentName']) ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <br/>
-
-                    
-
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="dateBirthDate" placeholder="Birth Date" max="<?= date('Y-m-d', strtotime('-18 years')) ?>" title="Enter a birth date" required>
-                                <label for="dateBirthDate">Birth Date<span class="requiredAskterisk">*</span></label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </fieldset>
-
-                    <fieldset>
-                        <legend class="AdminRegistrationLegend">Contacts Information</legend>
-
-                        <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="txtEmail" placeholder="Email" maxlength="149" title="Enter an email address" required>
-                                    <label for="txtEmail">Email<span class="requiredAskterisk">*</span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
-                                    <label>+63</label>
-                                </div>
-                            </div>
-
-                            <div class="col s12 m12 l12">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="txtContactNumber" placeholder="Contact Number" maxlength="9" title="Enter a contact number" required>
-                                    <label for="txtContactNumber">Contact Number<span class="requiredAskterisk">*</span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                    </fieldset>
-
-                    <fieldset>
-                        <legend class="AdminRegistrationLegend">Create Password</legend>
-
-                        <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="hiddenSetPassword" placeholder="Set Password" maxlength="254" title="Set up a password" required>
-                                    <label for="hiddenSetPassword">Set Password<span class="requiredAskterisk">*</span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="hiddenConfirmPassword" placeholder="Confirm Password" maxlength="254" title="Confirm your password" required>
-                                    <label for="hiddenConfirmPassword">Confirm Password<span class="requiredAskterisk">*</span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                    </fieldset>
-
-                </form>
+    <div class="container-fluid p-0">
+        <div class="row g-0 split-container">
+            
+            <div class="col-md-5 branding-side d-none d-md-flex text-start">
+                <div class="logo-area">
+                    <img src="../../Multimedia/Images/Likha-Museum-Logo-Transparent.png" alt="Likha Museum Logo" class="logo">
                 </div>
-                
-                <div>
-                    <button class="btn btn-add" style="width:100%" title="Add a new user." onclick="addFunc()" type="button"><i class="bi bi-person-fill-add"></i> Add</button>
+                <div class="headline-area my-auto">
+                    <h1 class="title text-start mb-2">Registration</h1>
+                    <p class="fs-5 text-dark-50" style="font-family: 'Playfair-Display', serif;">Join the Likha Art Museum Administration team.</p>
                 </div>
+                <div class="footer-area small text-muted" style="font-family: 'Roboto', sans-serif;">
+                    © 2026 Likha Museum. All rights reserved.
+                </div>
+            </div>
+
+            <div class="col-12 col-md-7 form-side">
+                <div class="form-content-scroll">
+                    
+                    <h2 class="fw-bold mb-1 text-dark" style="font-family: 'Playfair-Display', serif; font-size: 2rem;">CREATE ACCOUNT</h2>
+                    <p class="text-muted mb-4 small" style="font-family: 'Roboto', sans-serif;">Fill out the details below to set up a new profile.</p>
+
+                    <form>
+                        
+                        <fieldset>
+                            <legend class="AdminRegistrationLegend fs-5 mb-3">User Information</legend>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" maxlength="99" title="Enter a first name" required>
+                                        <label for="txtFirstName">First Name<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="txtMiddleName" placeholder="Middle Name" maxlength="99" title="Enter a middle name" required>
+                                        <label for="txtMiddleName">Middle Name<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" maxlength="99" title="Enter a last name" required>
+                                        <label for="txtLastName">Last Name<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="dateBirthDate" placeholder="Birth Date" max="<?= date('Y-m-d', strtotime('-18 years')) ?>" title="Enter a birth date" required>
+                                        <label for="dateBirthDate">Birth Date<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 d-flex align-items-center">
+                                    <select class="form-select py-3" id="selDepartment" aria-label="Department Selection" style="height: calc(3.5rem + 2px);">
+                                        <option selected disabled>Select Department*</option>
+                                        <?php foreach($departments as $department): ?>
+                                            <option value="<?= (int) $department['Department_ID'] ?>"><?= htmlspecialchars($department['DepartmentName']) ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="AdminRegistrationLegend fs-5 mb-3">Contacts Information</legend>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="txtEmail" placeholder="Email" maxlength="149" title="Enter an email address" required>
+                                        <label for="txtEmail">Email<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-3">
+                                    <div class="form-floating">
+                                        <input class="form-control text-center text-muted" type="text" value="+63" aria-label="Country Code" disabled style="padding-top: 1.625rem;">
+                                        <label>Country Code</label>
+                                    </div>
+                                </div>
+                                <div class="col-8 col-sm-9">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="txtContactNumber" placeholder="Contact Number" maxlength="9" title="Enter a contact number" required>
+                                        <label for="txtContactNumber">Contact Number<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="AdminRegistrationLegend fs-5 mb-3">Create Password</legend>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="hiddenSetPassword" placeholder="Set Password" maxlength="254" title="Set up a password" required>
+                                        <label for="hiddenSetPassword">Set Password<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="hiddenConfirmPassword" placeholder="Confirm Password" maxlength="254" title="Confirm your password" required>
+                                        <label for="hiddenConfirmPassword">Confirm Password<span class="requiredAskterisk">*</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="mt-4">
+                            <hr class="flex-grow-1 m-0 opacity-25">
+                            <button class="btn btn-standard w-100" onclick="addFunc()" type="button">
+                                <i class="bi bi-person-fill-add me-2"></i> Register
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-4" style="font-family: 'Roboto', sans-serif;">
+                        <p class="text-muted small mb-1">
+                            By registering you agree with our <a href="#" class="text-decoration-none text-dark fw-semibold">Terms and Conditions</a>
+                        </p>
+
+                        <?php if(!empty($tableUsers)): ?> <!-- This only shows up kapag may users sa table -->
+                            <p class="text-muted small">
+                                Already have an account? <a class="redirectLink" onclick="redirectFunc(1)">Log in</a>
+                            </p>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
-
     </div>
 
-
-    
-    
-
     <script src="../../Scripts/AdminService.js"></script>
-
 </body>
 </html>

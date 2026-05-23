@@ -38,50 +38,89 @@
     <link rel="icon" type="image/png" href="../../Multimedia/Images/Likha-Museum-Icon.png">
 
     <title>Login</title>
+
 </head>
 
-<body class="Login-Page">
+<body class="Login-Page p-0 m-0">
     
-    <div class="HeaderBorder">
-        <h1 class="title">Login</h1>
-    </div>
-
-    <div class="BodyBorder">
-
-        <div class="InputFields col s12 m12 l12">
+    <div class="container-fluid p-0">
+        <div class="row g-0 vh-100 align-items-stretch">
+            
+            <div class="col-md-6 d-none d-md-flex flex-column justify-content-between p-5 position-relative text-start">
+                <div class="logo-area">
+                    <img src="../../Multimedia/Images/Likha-Museum-Logo-Transparent.png" alt="Museum Icon" class="logo">
+                </div>
                 
-            <div class="row">
-                <form>
+                <div class="headline-area my-auto">
+                    <h1 class="title text-start mb-2" style="font-size: 3.5rem;">LIKHA ART <br>MUSEUM</h1>
+                    <p class="fs-5 text-dark-50 ms-1" style="font-family: 'Playfair-Display', serif;">Experience human expression reimagined.</p>
+                </div>
+                
+                <div class="footer-area small opacity-75" style="font-family: 'Roboto', sans-serif;">
+                    © 2026 Likha Museum. All rights reserved.
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center bg-white p-4 p-md-5">
+                <div class="w-100" style="max-width: 440px;">
                     
-                    <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="loginEmail" placeholder="Email" required>
-                                    <label for="loginEmail">Email</label>
-                                </div>
-                            </div>
+                    <h2 class="fw-bold mb-1 text-dark" style="font-family: 'Playfair-Display', serif; font-size: 2.2rem; letter-spacing: 0.5px;">LOGIN</h2>
+                    <p class="text-muted mb-4 small" style="font-family: 'Roboto', sans-serif;">Login with your email address below</p>
+
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Email" required autocomplete="email">
+                            <label for="loginEmail">Email</label>
+                        </div>
+
+                        <div class="form-floating mb-4">
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required autocomplete="current-password">
+                            <label for="loginPassword">Enter Password</label>
+                        </div>
+
+                        <div class="mb-4">
+                            <button class="btn btn-standard w-100 py-3" title="Login" onclick="loginFunc()" type="button">
+                                <i class="bi bi-person-fill-add me-2"></i>Login
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-4" style="font-family: 'Roboto', sans-serif;">    
+                        <p class="text-muted small">
+                            Don't have an account? <a class="redirectLink" onclick="redirectFunc(3)">Sign up</a>
+                        </p>
                     </div>
 
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
-                                <label for="loginPassword">Enter Password</span></label>
-                            </div>
+                    <!--<div class="d-flex align-items-center my-4 text-muted" style="font-family: 'Roboto', sans-serif;">
+                        <hr class="flex-grow-1 m-0 opacity-25">
+                        <span class="px-3 small text-uppercase fw-semibold tracking-wider opacity-75" style="font-size: 0.75rem;">Or continue with</span>
+                        <hr class="flex-grow-1 m-0 opacity-25">
+                    </div>
+
+                    <div class="row g-3 mb-4" style="font-family: 'Roboto', sans-serif;">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-outline-secondary w-100 py-2.5 small fw-medium" style="border-radius: 6px;">
+                                <i class="bi bi-google me-2 text-danger"></i>Google
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-outline-secondary w-100 py-2.5 small fw-medium" style="border-radius: 6px;">
+                                <i class="bi bi-facebook me-2 text-primary"></i>Facebook
+                            </button>
                         </div>
                     </div>
 
-                </form>
-            </div>
+                    <p class="text-center text-muted small mt-4" style="font-family: 'Roboto', sans-serif; font-size: 0.8rem;">
+                        By registering you agree with our <a href="#" class="text-decoration-none text-dark fw-semibold">Terms and Conditions</a>
+                    </p>-->
 
-            <div>
-                <button class="btn btn-to-dashboard" style="width:100%" title="Login" onclick="loginFunc()" type="button"><i class="bi bi-person-fill-add"></i> Login</button>
+                </div>
             </div>
 
         </div>
+    </div>
 
     <script src="../../Scripts/AdminService.js"></script>
-
 </body>
 
 </html>

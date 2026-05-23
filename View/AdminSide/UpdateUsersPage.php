@@ -187,7 +187,7 @@
                 </div>
                 
                 <div>
-                    <button class="btn btn-update" style="width:100%" title="Update user." onclick="updateFunc(document.getElementById('txtUserID').value)" type="button"><i class="bi bi-pencil-square"></i> Update</button>
+                    <button class="btn btn-standard" style="width:100%" title="Update user." onclick="updateFunc(document.getElementById('txtUserID').value)" type="button"><i class="bi bi-pencil-square"></i> Update</button>
                 </div>
 
             </div>
