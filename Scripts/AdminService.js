@@ -2,8 +2,8 @@
 $(document).ready(function () {
     if ($.fn.DataTable && !$.fn.DataTable.isDataTable('#myTable')) {
             $('#myTable').DataTable({
-                pageLength: 5,
-                lengthMenu: [5, 10, 25, 50, 100, 200],
+                pageLength: 10,
+                lengthMenu: [10, 20, 30, 50, 100, 200],
                 order: [[0, 'asc']],
                 language: {
                     search: 'Search user:',
