@@ -31,7 +31,7 @@
 
         /* SENDING WELCOME EMAIL TO NEW EMPLOYEES */
 
-        /*$name = htmlspecialchars(trim((string)$_POST['fName']) . ' ' . trim((string)$_POST['lName']), ENT_QUOTES, 'UTF-8');
+        $name = htmlspecialchars(trim((string)$_POST['fName']) . ' ' . trim((string)$_POST['lName']), ENT_QUOTES, 'UTF-8');
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
         if(!$email) {
@@ -60,7 +60,7 @@
         }
         else {
             echo "Failed to send email: $result";
-        }*/
+        }
 
         /* AND SAKA NA SIYA I-ADD SA TABLE AND DATABASE KAYA PALA HINDI NAKA-ADD SA DATABASE NA-COMMENT KO ITO NOONG NAKARAAN */
         $userManagement -> addUserFunc($_POST['fName'], $_POST['mName'], $_POST['lName'], $_POST['deptID'], $_POST['email'], $_POST['contactNumber'], $_POST['birthDate'], $_POST['password']);
@@ -80,7 +80,7 @@
             $password = null;//tapos may if nanaman here 
         }
 
-        /*$name = htmlspecialchars(trim((string)$_POST['uFName']) . ' ' . trim((string)$_POST['uLName']), ENT_QUOTES, 'UTF-8');
+        $name = htmlspecialchars(trim((string)$_POST['uFName']) . ' ' . trim((string)$_POST['uLName']), ENT_QUOTES, 'UTF-8');
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
         if(!$email) {
@@ -122,7 +122,7 @@
             $_POST['birthDate'],
             $password,
             $_POST['deptID']
-        );*/
+        );
 
         exit;
     }
