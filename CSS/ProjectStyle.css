@@ -1,0 +1,599 @@
+/* GLOBAL STYLES */
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* CUSTOM FONTS FROM FILE DOWNLOADS */
+
+@font-face {
+    font-family: 'Maragsa';
+    src: url('/Fonts/Maragsa-Font/Maragsa.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Fonts/Montserrat-Font/Montserrat-Full-Version/Desktop Fonts/Montserrat/TTF/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair-Display';
+    src: url('Fonts/Playfair-Display-Font/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Fonts/Roboto-Font/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* PAGE STYLES */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #D5B895;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: clamp(12px, 2vw, 20px);
+}
+
+/* LOGO */
+
+.logo {
+    width: auto;
+    height: 75px;
+}
+
+/* PAGE COMPONENTS SA ADMIN SIDE */
+
+header { 
+    background-color: #fffdf9;
+    color: #222526;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AdminRegistrationLegend {
+    font-family: 'Playfair-Display', serif;
+    color: #222526;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.Registration-Page {
+    background-color: #D5B895;
+    background-image: url("../../TAGUINOD_LikhaArtMuseum/Multimedia/Images/registration-page-background.png");
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: clamp(12px, 2vw, 20px);
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+}
+
+.Login-Page {
+    background-color: #D5B895;
+    background-image: url("../../TAGUINOD_LikhaArtMuseum/Multimedia/Images/login-page-background.png");
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: clamp(12px, 2vw, 20px);
+}
+
+.Dashboard-Page {
+    background-color: #D5B895;
+    /*background-image: url("../../TAGUINOD_LikhaArtMuseum/Multimedia/Images/dashboard-page-background.png");*/
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: clamp(12px, 2vw, 20px);
+}
+
+.Update-Users-Page{
+    background-color: #D5B895;
+    /*background-image: url("../../TAGUINOD_LikhaArtMuseum/Multimedia/Images/update-users-page-background.png");*/
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: clamp(12px, 2vw, 20px);
+}
+
+.title {
+    text-align: center;
+    color: #3C2218;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+    font-size: 3.5rem;
+    font-family: 'Maragsa', sans-serif;
+}
+
+.split-container {
+    min-height: 100vh;
+}
+
+.branding-side {
+    background-color: #D5B895; 
+    background-image: url("../../TAGUINOD_LikhaArtMuseum/Multimedia/Images/registration-page-background.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem 3rem;
+}
+
+.form-side {
+    background-color: #fffdf9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 3rem;
+}
+
+.form-content-scroll {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.form-control, .form-select {
+    border-radius: 8px !important;
+}
+
+/* SOME LABELS AND FIELDS IN THE FORMS */
+
+.requiredAskterisk {
+    color: #bd4343;
+}
+
+.form-control.warning-border {
+    border-color: #bd4343;
+}
+
+.redirectLink {
+    color: #5287c8;
+    /*text-decoration: none;*/
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* CONTAINERS IN THE ADMIN SIDE */
+
+.HeaderBorder {
+    background-color: #FAF0DC;
+    padding: clamp(20px, 10vw, 48px);
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 960px;
+}
+
+.BodyBorder {
+    background-color: #FAF0DC;
+    padding: clamp(20px, 10vw, 48px);
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.InputFields{
+    background-color: #fffdf9;
+    padding: clamp(20px, 10vw, 48px);
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 520px;
+}
+
+.ContainerForInputs {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 12px;
+  gap: 20px;
+  background-color: #FBF1DC; 
+  padding: 30px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr; 
+  gap: 20px;
+}
+
+.main-chart-card {
+  background: #FFFDF9;
+  border-radius: 12px; 
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.card {
+  background: #FFFDF9;
+  border-radius: 12px; 
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.line-graph-wrapper {
+    height: 450px; /* Bawasan ang height strictly to this size */
+}
+
+.metrics-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto;    
+  gap: 15px;  
+  align-content: start; 
+  height: 100%;
+}
+
+.kpi-card {
+  background: #FFFDF9;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  text-align: center;
+  color: #1e293b;
+  
+  aspect-ratio: 1 / 1; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.2fr; 
+  gap: 20px;
+}
+
+.TableField {
+    background-color: #fffdf9;
+    padding: clamp(12px, 2vw, 20px);
+    border-radius: 12px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    width: 100%;
+    max-width: none;
+    overflow-x: auto;
+}
+
+#myTable {
+    width: 100% !important;
+}
+
+.CustomerRegistrationLegend {
+    font-family: 'Playfair-Display', serif;
+    color: #222526;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* TABLE NA MAY MEDYO RESPONSIVENESS */
+
+.TableField table {
+    width: 100%;
+    min-width: 520px;
+}
+
+.card-title {
+    font-family: 'Playfair-Display', serif;
+    color: #222526;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    font-size: 18px;
+}
+
+/* CHART DISPLAY */
+
+.ChartDisplay{
+    background-color: #fffdf9;
+    padding: clamp(12px, 2vw, 20px);
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    overflow-x: auto;
+}
+
+
+/* BUTTONS NA CUSTOMIZED NA PREMADE SA BOOTSTRAP 5 */
+
+.btn-logout {
+    background-color: #3C2218;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-logout:hover {
+    background-color: #66493d;
+    color: white;
+}
+
+.btn-standard {
+    background-color: #3C2218;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-standard:hover {
+    background-color: #66493d;
+    color: white;
+}
+
+.btn-update {
+    background-color: #dc9a3e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-update:hover {
+    background-color: #ce8013;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #c85852;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-delete:hover {
+    background-color: #b8352e;
+    color: white;
+}
+
+.btn-to-dashboard {
+    background-color: #5287c8;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-to-dashboard:hover {
+    background-color: #3c669a;
+    color: white;
+}
+
+.btn-return-regis {
+    background-color: #17a2b8;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-return-regis:hover {
+    background-color: #138496;
+    color: white;
+}
+
+/* DATE AND TIME DISPLAY */
+
+.DateTimeToday {
+    background-color: #fffdf9;
+    font-size: 14px;
+    color: #333333;
+    padding: clamp(12px, 2vw, 20px);
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+#currentDate {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+#currentTime {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.TodayIs {
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #333333;
+}
+
+/* CARD DISPLAY */
+
+.CardDisplay {
+    padding: clamp(12px, 2vw, 20px);
+    border-radius: 5px;
+    margin: 16px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.Card {
+    background-color: #fffdf9;
+    padding: clamp(12px, 2vw, 20px);
+    border-radius: 5px;
+    margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: calc((100% - 32px) / 3);
+    min-width: 200px;
+}
+
+@media (max-width: 600px) {
+    .InputFields,
+    .TableField {
+        padding: 16px;
+        margin: 12px auto;
+    }
+
+    .InputFields .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .InputFields .row .col {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .CardDisplay {
+        flex-direction: column;
+    }
+
+    .Card {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* NAVIGATION BAR SA USER SIDE */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #FFFDF9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li a {
+    display: block;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+/* CONTAINERS IN THE HOME PAGE */
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+    background-color: #EBE6E0;
+}
+
+
+.hero-image {
+    flex: 1; /* Takes up 50% of the width */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the space without stretching */
+}
+
+.home-page-content {
+    flex: 1; /* Takes up the other 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers text vertically */
+    align-items: center;     /* Centers text horizontally */
+    padding: 60px;           /* Adds space around the text */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+}
+
+/* OPENING HOURS SECTION IN THE PROJECT VISIT PAGE */
+
+.opening-hours-section {
+    background-color: #EBE6E0;
+    padding: 40px;
+    border-radius: 5px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.opening-hours-title {
+    font-family: 'Playfair-Display', serif;
+    color: #222526;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
