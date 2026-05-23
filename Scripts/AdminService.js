@@ -767,17 +767,5 @@ $(document).ready(function () {
                 window.location.href = "../../View/AdminSide/UpdateUsersPage.php";
             }
         }
-
-        else{
-            window.location.href = "../../View/AdminSide/NotFoundPage.html";
-        }
     
     }
-
-/*    function NotFoundRedirect() {
-        
-        if (!window.location.href.includes("NotFoundPage.html" || "NotFoundPage.php")) {
-            window.location.href = "../../View/AdminSide/NotFoundPage.html";
-        }
-
-    }*/
