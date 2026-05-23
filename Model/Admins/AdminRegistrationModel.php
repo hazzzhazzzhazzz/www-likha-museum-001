@@ -37,10 +37,8 @@
 
             $employeeID = $this -> conn -> lastInsertId();
 
-
             $passwordHash = password_hash($password, PASSWORD_ARGON2ID);
             
-
             $query_tblAdminDetails = "INSERT INTO tbl_admindetails (Employee_ID, PasswordHash, createdAt, updatedAt) 
             VALUES (:employeeID, :passwordHash, :createdAt, :updatedAt)";
 
