@@ -12,7 +12,8 @@
         
         public function createRegistration($firstName, $middleName, $lastName, $email, $contactNumber, $birthDate, $password, $departmentID) {
             
-            $dateNow = date("Y-m-d H:i:s");
+            $date = new DateTime("now", new DateTimeZone('Asia/Manila')); //Philippine timezone
+            $dateNow = $date->format("Y-m-d H:i:s");
 
             $this -> conn -> beginTransaction();
 
@@ -122,7 +123,8 @@
 
                     $response_tblEmployees = $this -> conn -> prepare($query_tblEmployees);
 
-                    $dateNow = date("Y-m-d H:i:s");
+                    $date = new DateTime("now", new DateTimeZone('Asia/Manila')); //Philippine timezone
+                    $dateNow = $date->format("Y-m-d H:i:s");
                     
                     $response_tblEmployees->bindParam(':departmentID', $departmentID);
                     $response_tblEmployees -> bindParam(':firstName', $firstName);
@@ -139,7 +141,7 @@
                     if (!empty($password)) {
                         $query_tblAdminDetails = "UPDATE tbl_admindetails SET PasswordHash = :passwordHash, updatedAt = :updatedAt WHERE Employee_ID = :employeeID";
                         $response_tblAdminDetails = $this -> conn -> prepare($query_tblAdminDetails);
-                        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                        $passwordHash = password_hash($password, PASSWORD_ARGON2ID);
                         $response_tblAdminDetails -> bindParam(':passwordHash', $passwordHash);
                         $response_tblAdminDetails -> bindParam(':updatedAt', $dateNow);
                         $response_tblAdminDetails -> bindParam(':employeeID', $employeeID);
