@@ -3,7 +3,7 @@ $(document).ready(function () {
     if ($.fn.DataTable && !$.fn.DataTable.isDataTable('#myTable')) {
             $('#myTable').DataTable({
                 pageLength: 10,
-                lengthMenu: [10, 20, 30, 50, 100, 200],
+                lengthMenu: [10, 20, 30, 50, 100],
                 order: [[0, 'asc']],
                 language: {
                     search: 'Search user:',
@@ -23,7 +23,9 @@ $(document).ready(function () {
         datasets: [{
             label: '# of Employees',
             data: window.EmployeeBarChart.data,
-            borderWidth: 1
+            borderWidth: 1,
+            borderColor: '#7f5539',
+            backgroundColor: '#a68a64'
         }]
         },
         options: {
@@ -46,11 +48,11 @@ $(document).ready(function () {
                 label: 'Employees Joined',
                 data: window.EmployeePieChart.data, 
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(75, 192, 192)',
-                    'rgb(153, 102, 255)'
+                    '#7f5539',
+                    '#a68a64',
+                    '#e9c46a',
+                    '#656d4a',
+                    '#414833'
                 ],
                 borderWidth: 1
             }]
@@ -67,19 +69,19 @@ $(document).ready(function () {
                 label: 'Admin Logins',
                 data: window.EmployeeLineChart.data,
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: '#414833',
                 tension: 0.3,
-                pointBackgroundColor: 'rgb(255, 99, 132)'
+                pointBackgroundColor: '#bc4749'
             }]
         },
-        // Move all configurations inside this ONE options block
+        
         options: {
             responsive: true,
-            maintainAspectRatio: false, // <-- Forces the chart to obey your CSS height
+            maintainAspectRatio: false,
             
             layout: {
                 padding: {
-                    bottom: 25, // Increased a bit more to completely clear your month labels
+                    bottom: 25,
                     left: 10,
                     right: 15,
                     top: 5

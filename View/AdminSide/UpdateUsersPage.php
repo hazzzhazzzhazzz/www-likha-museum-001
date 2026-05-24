@@ -76,14 +76,14 @@
                     <div class="row">
                         <div class="col s6 m6 l6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtFirstName" placeholder="First Name" required>
+                                <input type="text" class="form-control" id="txtFirstName" maxlength="99" placeholder="First Name" required>
                                 <label for="txtFirstName">First Name<span class="requiredAskterisk">*</span></label>
                             </div>
                         </div>
 
                         <div class="col s6 m6 l6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtMiddleName" placeholder="Middle Name" required>
+                                <input type="text" class="form-control" id="txtMiddleName" maxlength="99" placeholder="Middle Name" required>
                                 <label for="txtMiddleName">Middle Name<span class="requiredAskterisk">*</span></label>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                     <div class="row">
                         <div class="col s12 m12 l12">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="txtLastName" placeholder="Last Name" required>
+                                <input type="text" class="form-control" id="txtLastName" maxlength="99" placeholder="Last Name" required>
                                 <label for="txtLastName">Last Name<span class="requiredAskterisk">*</span></label>
                             </div>
                         </div>
@@ -102,7 +102,6 @@
                         <div class="col s12 m12 l12">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="txtUserID" placeholder="User ID" required hidden>
-                                <!--<label for="txtUserID">User ID<span class="requiredAskterisk">*</span></label>-->
                             </div>
                         </div>
                     </div>
@@ -123,7 +122,7 @@
                     <div class="row">
                         <div class="col s12 m12 l12">
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="dateBirthDate" placeholder="Birth Date" required>
+                                <input type="date" class="form-control" id="dateBirthDate" max="<?= date('Y-m-d', strtotime('-18 years')) ?>" placeholder="Birth Date" required>
                                 <label for="dateBirthDate">Birth Date<span class="requiredAskterisk">*</span></label>
                             </div>
                         </div>
@@ -137,7 +136,7 @@
                             <div class="row">
                             <div class="col s12 m12 l12">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="txtEmail" placeholder="Email" required>
+                                    <input type="email" class="form-control" id="txtEmail" maxlength="149" placeholder="Email" required>
                                     <label for="txtEmail">Email<span class="requiredAskterisk">*</span></label>
                                 </div>
                             </div>
@@ -152,7 +151,7 @@
                             </div>
                             <div class="col s12 m12 l12">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="txtContactNumber" placeholder="Contact Number" required>
+                                    <input type="text" class="form-control" id="txtContactNumber" maxlength="9" placeholder="Contact Number" required>
                                     <label for="txtContactNumber">Contact Number<span class="requiredAskterisk">*</span></label>
                                 </div>
                             </div>
@@ -166,7 +165,7 @@
                         <div class="row">
                             <div class="col s12 m12 l12">
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="hiddenSetPassword" placeholder="Update Password" required>
+                                    <input type="password" class="form-control" id="hiddenSetPassword" maxlength="254" placeholder="Update Password" required>
                                     <label for="hiddenSetPassword">Update Password<span class="requiredAskterisk">*</span></label>
                                 </div>
                             </div>
@@ -175,7 +174,7 @@
                         <div class="row">
                             <div class="col s12 m12 l12">
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="hiddenConfirmPassword" placeholder="Confirm Password" required>
+                                    <input type="password" class="form-control" id="hiddenConfirmPassword" maxlength="254" placeholder="Confirm Password" required>
                                     <label for="hiddenConfirmPassword">Confirm Password<span class="requiredAskterisk">*</span></label>
                                 </div>
                             </div>
