@@ -99,7 +99,7 @@
         $result = sendEmail(
             $email,
             $name,
-            "Did you change your account details?",
+            "Did you change your details?",
             $body
         );
 
