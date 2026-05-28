@@ -114,6 +114,56 @@ $(document).ready(function () {
         //hindi kana maka-type ng letters
     }
 
+// Remove red borders dynamically as the user types or updates fields
+    function attachClearInvalidListeners(){
+        var fieldsToWatch = [
+            "selDepartment",
+            "txtFirstName",
+            "txtMiddleName",
+            "txtLastName",
+            "txtEmail",
+            "txtContactNumber",
+            "dateBirthDate",
+            "hiddenSetPassword",
+            "hiddenConfirmPassword",
+            "loginEmail",      // Added login fields directly into the loop array
+            "loginPassword"
+        ];
+
+        fieldsToWatch.forEach(function(id){
+            var el = document.getElementById(id);
+            if (!el) return; // Safely bypass fields that don't exist on the current page
+            
+            // FIX 1: Attach multiple event listeners to catch typing, clicking out, and autofills
+            el.addEventListener('input', handleFieldInput);
+            el.addEventListener('change', handleFieldInput);
+            el.addEventListener('blur', handleFieldInput);
+        });
+    }
+
+    // Single handler: Reverts the targeted element back to normal instantly
+    function handleFieldInput(e) {
+        var el = e.target;
+        
+        if (el.id === "selDepartment") {
+            // FIX 2: Check if a real option is selected (value is not empty and not the placeholder string)
+            if (el.value && el.value !== "" && el.value !== "Select Department*") {
+                el.classList.remove("is-invalid");
+            }
+        } else {
+            // Text, date, and password inputs check for content
+            if (el.value.trim() !== "") {
+                el.classList.remove("is-invalid");
+            }
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", attachClearInvalidListeners);
+    } else {
+        attachClearInvalidListeners();
+    }
+
 
     /* MINIMUM AGE IS 18 KASI BAKIT NAMAN MAY <18 NA MAGTRABAHO? */
     const BirthDateInput = document.getElementById("dateBirthDate");
@@ -198,8 +248,6 @@ $(document).ready(function () {
 
     }
 
-    //
-
     /* KUNG EMPTY SILA HINDI SIYA MAG-ADD SA DATABASE */
     function validateFields() {
         var deptIDValue = document.getElementById("selDepartment").value;
@@ -231,6 +279,10 @@ $(document).ready(function () {
                     animate__faster
                 ` }                
             });
+
+            //change color of the select element border to red
+            document.getElementById("selDepartment").classList.add("is-invalid");
+
             return false;
         }
 
@@ -253,6 +305,12 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the name text field borders to red
+            document.getElementById("txtFirstName").classList.add("is-invalid");
+            document.getElementById("txtMiddleName").classList.add("is-invalid");
+            document.getElementById("txtLastName").classList.add("is-invalid");
+
             return false;
         }
 
@@ -274,6 +332,10 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the email text field border to red
+            document.getElementById("txtEmail").classList.add("is-invalid");
+
             return false;
         }
 
@@ -295,6 +357,10 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the field borders to red
+            document.getElementById("txtEmail").classList.add("is-invalid");
+
             return false;
         }
 
@@ -316,6 +382,10 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the field borders to red
+            document.getElementById("txtContactNumber").classList.add("is-invalid");
+
             return false;
         }
 
@@ -340,6 +410,10 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the field borders to red
+            document.getElementById("txtContactNumber").classList.add("is-invalid");
+
             return false;
         }
 
@@ -361,6 +435,11 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the field borders to red
+            document.getElementById("hiddenSetPassword").classList.add("is-invalid");
+            document.getElementById("hiddenConfirmPassword").classList.add("is-invalid");
+
             return false;
         }
 
@@ -383,6 +462,17 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the field borders to red
+            document.getElementById("txtFirstName").classList.add("is-invalid");
+            document.getElementById("txtMiddleName").classList.add("is-invalid");
+            document.getElementById("txtLastName").classList.add("is-invalid");
+            document.getElementById("dateBirthDate").classList.add("is-invalid");
+            document.getElementById("txtEmail").classList.add("is-invalid");
+            document.getElementById("txtContactNumber").classList.add("is-invalid");
+            document.getElementById("hiddenSetPassword").classList.add("is-invalid");
+            document.getElementById("hiddenConfirmPassword").classList.add("is-invalid");
+            
             return false;
         }
 
@@ -407,6 +497,10 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the date field border to red
+            document.getElementById("dateBirthDate").classList.add("is-invalid");
+
             return false;
         }
 
@@ -428,6 +522,11 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the field borders to red
+            document.getElementById("hiddenSetPassword").classList.add("is-invalid");
+            document.getElementById("hiddenConfirmPassword").classList.add("is-invalid");
+
             return false;
         }
 
@@ -456,16 +555,94 @@ $(document).ready(function () {
                     animate__faster
                 ` }
             });
+
+            //change color of the email and password field borders to red
+            document.getElementById("loginEmail").classList.add("is-invalid");
+            document.getElementById("loginPassword").classList.add("is-invalid");
+
             return false;
         }
 
         return true;
     }
 
+    function removeRedBorders() {
+        
+        var deptIDValue = document.getElementById("selDepartment").value;
+        var firstNameValue = document.getElementById("txtFirstName").value.trim();
+        var middleNameValue = document.getElementById("txtMiddleName").value.trim();
+        var lastNameValue = document.getElementById("txtLastName").value.trim();
+        var emailValue = document.getElementById("txtEmail").value.trim();
+        var contactNumberValue = document.getElementById("txtContactNumber").value.trim();
+        var birthDateValue = document.getElementById("dateBirthDate").value.trim();
+        var passwordValue = document.getElementById("hiddenSetPassword").value.trim();
+        var confirmPasswordValue = document.getElementById("hiddenConfirmPassword").value.trim();
+
+        if (deptIDValue && deptIDValue !== "Select Department*") {
+            document.getElementById("selDepartment").classList.remove("is-invalid");
+        }
+
+        if (firstNameValue) {
+            document.getElementById("txtFirstName").classList.remove("is-invalid");
+        }
+
+        if (middleNameValue) {
+            document.getElementById("txtMiddleName").classList.remove("is-invalid");
+        }
+
+        if (lastNameValue) {
+            document.getElementById("txtLastName").classList.remove("is-invalid");
+        }
+
+        if (emailValue) {
+            document.getElementById("txtEmail").classList.remove("is-invalid");
+        }
+
+        if (contactNumberValue) {
+            document.getElementById("txtContactNumber").classList.remove("is-invalid");
+        }
+
+        if (birthDateValue) {
+            document.getElementById("dateBirthDate").classList.remove("is-invalid");
+        }
+
+        if (passwordValue) {
+            document.getElementById("hiddenSetPassword").classList.remove("is-invalid");
+        }
+
+        if (confirmPasswordValue) {
+            document.getElementById("hiddenConfirmPassword").classList.remove("is-invalid");
+        }
+
+    }
+
+    function removeRedBordersLogin() {
+        var emailValue = document.getElementById("loginEmail").value;
+        var passwordValue = document.getElementById("loginPassword").value;
+
+        if (emailValue) {
+            document.getElementById("loginEmail").classList.remove("is-invalid");
+        }
+
+        if (passwordValue) {
+            document.getElementById("loginPassword").classList.remove("is-invalid");
+        }
+    }
+
     function addFunc(){
         if (!validateFields()) {
             return;
         }
+
+        var activeFields = [
+            "selDepartment", "txtFirstName", "txtMiddleName", "txtLastName",
+            "txtEmail", "txtContactNumber", "dateBirthDate", "hiddenSetPassword", "hiddenConfirmPassword"
+        ];
+        activeFields.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.remove("is-invalid");
+        });
+
 
         var deptIDValue = document.getElementById("selDepartment").value;
         var firstNameValue = document.getElementById("txtFirstName").value;
@@ -529,6 +706,15 @@ $(document).ready(function () {
         if (!validateFields()) {
             return;
         }
+
+        var activeFields = [
+            "selDepartment", "txtFirstName", "txtMiddleName", "txtLastName",
+            "txtEmail", "txtContactNumber", "dateBirthDate", "hiddenSetPassword", "hiddenConfirmPassword"
+        ];
+        activeFields.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.remove("is-invalid");
+        });
         
         var deptIDValue = document.getElementById("selDepartment").value;
         var firstNameValue = document.getElementById("txtFirstName").value;
@@ -658,7 +844,15 @@ $(document).ready(function () {
 
         if (!validateLoginFields()) {
             return;
-        }        
+        }
+
+        var activeFields = [
+            "loginEmail", "loginPassword"
+        ];
+        activeFields.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.remove("is-invalid");
+        });
 
         var emailValue = document.getElementById("loginEmail").value;
         var passwordValue = document.getElementById("loginPassword").value;

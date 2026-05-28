@@ -58,7 +58,6 @@
 
 <body class="Update-Users-Page">
 
-
     <div class="HeaderBorder">
         <h1 class="title">Update Information</h1>
     </div>
@@ -195,6 +194,9 @@
     </div>
 
     <script>
+
+        //will be moved or idk gagana kaya?
+
         const selectedUser = <?= $selectedUserJSON ?: 'null' ?>;
 
         document.addEventListener('DOMContentLoaded', function () {
