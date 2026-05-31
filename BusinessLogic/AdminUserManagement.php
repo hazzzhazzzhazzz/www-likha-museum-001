@@ -113,7 +113,7 @@
             $admin = $this -> registrationModel -> getAdminByEmail($email);
 
             if (!$admin || !isset($admin['PasswordHash'])) {
-                return false;
+                return false; 
             }
 
             if (!password_verify($password, $admin['PasswordHash'])) {
