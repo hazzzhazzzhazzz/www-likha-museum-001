@@ -105,6 +105,8 @@
             return $response -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+        /* LOGIN AND LOGOUT */
+
         public function loginUserFunc($email, $password) {
             $this -> initializeSessionUserArray();
 

@@ -86,7 +86,7 @@
                 <div class="kpi-card">Total Departments: <?= $totalDept['TotalDepartments'] /*alias ng column from query*/ ?></div>
                 <div class="kpi-card">Total Employees: <?= $totalEmp['TotalEmployees'] /*alias ng column from query*/ ?></div>
                 <div class="kpi-card">Logs This Month: <?= $currMonthLogins['NumberofEmployees'] /*alias ng column from query*/ ?></div>
-                <div class="kpi-card">Title: <!-- < ?= $random['Title'] /*alias ng column from query*/ ?> --></div>
+                <div class="kpi-card">Logs This Year: <?= $currMonthLogins['NumberofEmployees'] /*alias ng column from query*/ ?></div>
             </div>
         </div>
     </div>

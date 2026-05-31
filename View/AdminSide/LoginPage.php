@@ -69,12 +69,12 @@
 
                     <form>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Email" required autocomplete="email">
+                            <input type="email" class="form-control" name="lEmail" id="loginEmail" placeholder="Email" required autocomplete="email">
                             <label for="loginEmail">Email</label>
                         </div>
 
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required autocomplete="current-password">
+                            <input type="password" class="form-control" name="lPassword" id="loginPassword" placeholder="Password" required autocomplete="current-password">
                             <label for="loginPassword">Enter Password</label>
                         </div>
 
@@ -91,28 +91,6 @@
                         </p>
                     </div>
 
-                    <!--<div class="d-flex align-items-center my-4 text-muted" style="font-family: 'Roboto', sans-serif;">
-                        <hr class="flex-grow-1 m-0 opacity-25">
-                        <span class="px-3 small text-uppercase fw-semibold tracking-wider opacity-75" style="font-size: 0.75rem;">Or continue with</span>
-                        <hr class="flex-grow-1 m-0 opacity-25">
-                    </div>
-
-                    <div class="row g-3 mb-4" style="font-family: 'Roboto', sans-serif;">
-                        <div class="col-6">
-                            <button type="button" class="btn btn-outline-secondary w-100 py-2.5 small fw-medium" style="border-radius: 6px;">
-                                <i class="bi bi-google me-2 text-danger"></i>Google
-                            </button>
-                        </div>
-                        <div class="col-6">
-                            <button type="button" class="btn btn-outline-secondary w-100 py-2.5 small fw-medium" style="border-radius: 6px;">
-                                <i class="bi bi-facebook me-2 text-primary"></i>Facebook
-                            </button>
-                        </div>
-                    </div>
-
-                    <p class="text-center text-muted small mt-4" style="font-family: 'Roboto', sans-serif; font-size: 0.8rem;">
-                        By registering you agree with our <a href="#" class="text-decoration-none text-dark fw-semibold">Terms and Conditions</a>
-                    </p>-->
 
                 </div>
             </div>
