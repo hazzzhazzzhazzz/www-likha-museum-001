@@ -141,7 +141,7 @@
                     if (!empty($password)) {
                         $query_tblAdminDetails = "UPDATE tbl_admindetails SET PasswordHash = :passwordHash, updatedAt = :updatedAt WHERE Employee_ID = :employeeID";
                         $response_tblAdminDetails = $this -> conn -> prepare($query_tblAdminDetails);
-                        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                        $passwordHash = password_hash($password, PASSWORD_ARGON2ID);
                         $response_tblAdminDetails -> bindParam(':passwordHash', $passwordHash);
                         $response_tblAdminDetails -> bindParam(':updatedAt', $dateNow);
                         $response_tblAdminDetails -> bindParam(':employeeID', $employeeID);

@@ -534,8 +534,15 @@ $(document).ready(function () {
     }
 
     function validateLoginFields() {
-        var emailValue = document.getElementById("loginEmail").value;
-        var passwordValue = document.getElementById("loginPassword").value;
+        var emailField = document.getElementById("lEmail");
+        var passwordField = document.getElementById("lPassword");
+
+        if (!emailField || !passwordField) {
+            return false;
+        }
+
+        var emailValue = emailField.value;
+        var passwordValue = passwordField.value;
 
         if (!emailValue || !passwordValue) {
             Swal.fire({
@@ -557,8 +564,8 @@ $(document).ready(function () {
             });
 
             //change color of the email and password field borders to red
-            document.getElementById("loginEmail").classList.add("is-invalid");
-            document.getElementById("loginPassword").classList.add("is-invalid");
+            emailField.classList.add("is-invalid");
+            passwordField.classList.add("is-invalid");
 
             return false;
         }
@@ -617,15 +624,22 @@ $(document).ready(function () {
     }
 
     function removeRedBordersLogin() {
-        var emailValue = document.getElementById("loginEmail").value;
-        var passwordValue = document.getElementById("loginPassword").value;
+        var emailField = document.getElementById("lEmail");
+        var passwordField = document.getElementById("lPassword");
+
+        if (!emailField || !passwordField) {
+            return;
+        }
+
+        var emailValue = emailField.value;
+        var passwordValue = passwordField.value;
 
         if (emailValue) {
-            document.getElementById("loginEmail").classList.remove("is-invalid");
+            emailField.classList.remove("is-invalid");
         }
 
         if (passwordValue) {
-            document.getElementById("loginPassword").classList.remove("is-invalid");
+            passwordField.classList.remove("is-invalid");
         }
     }
 
@@ -854,8 +868,15 @@ $(document).ready(function () {
             if (el) el.classList.remove("is-invalid");
         });
 
-        var emailValue = document.getElementById("loginEmail").value;
-        var passwordValue = document.getElementById("loginPassword").value;
+        var emailField = document.getElementById("lEmail");
+        var passwordField = document.getElementById("lPassword");
+
+        if (!emailField || !passwordField) {
+            return;
+        }
+
+        var emailValue = emailField.value;
+        var passwordValue = passwordField.value;
 
         $.ajax({
             url: "../../Controllers/AdminUserController.php",

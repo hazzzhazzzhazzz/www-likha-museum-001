@@ -69,13 +69,13 @@
 
                     <form>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="lEmail" id="loginEmail" placeholder="Email" required autocomplete="email">
-                            <label for="loginEmail">Email</label>
+                            <input type="email" class="form-control" id="lEmail" placeholder="Email" required autocomplete="email">
+                            <label for="lEmail">Email</label>
                         </div>
 
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" name="lPassword" id="loginPassword" placeholder="Password" required autocomplete="current-password">
-                            <label for="loginPassword">Enter Password</label>
+                            <input type="password" class="form-control" id="lPassword" placeholder="Password" required autocomplete="current-password">
+                            <label for="lPassword">Enter Password</label>
                         </div>
 
                         <div class="mb-4">

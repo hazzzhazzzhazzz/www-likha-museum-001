@@ -146,7 +146,8 @@
         
         //l is login so lEmail and lPassword
 
-        $userManagement -> loginUserFunc($_POST['lEmail'], $_POST['lPassword']) ? true : false;
+        echo $userManagement -> loginUserFunc($_POST['lEmail'], $_POST['lPassword']) ? true : false;
+        exit;
     }
 
     else if (hasNonEmptyPostKeys(['logout'])) {
